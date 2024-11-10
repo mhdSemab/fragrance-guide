@@ -8,15 +8,23 @@ use Illuminate\Http\Request;
 
 class FragranceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $fragrances = Fragrance::paginate(10);
+        $search = $request->input('search');
+        $fragrances = Fragrance::when($search, function ($query, $search) {
+            return $query->where('name', 'like', '%' . $search . '%') ->orWhere('description', 'like', '%' . $search . '%');
+        })->paginate(10);
         return view('fragrances.index', compact('fragrances'));
     }
 
     public function create()
     {
         return view('fragrances.create');
+    }
+
+    public function about()
+    {
+        return view('fragrances.about');
     }
 
     public function store(Request $request)
@@ -62,4 +70,5 @@ class FragranceController extends Controller
         $fragrance->delete();
         return redirect()->route('fragrances.index')->with('success', 'Fragrance deleted successfully');
     }
+
 }

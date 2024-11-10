@@ -16,6 +16,7 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
 }
+
 main {
     padding: 2rem;
 }
@@ -32,31 +33,3 @@ th, td {
     text-align: left;
 }
 
-/* Adjust pagination button size */
-.pagination {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-.pagination .page-item {
-    margin: 0 2px;
-}
-
-.pagination .page-link {
-    padding: 5px 10px;
-    font-size: 0.875rem;  /* Smaller font size */
-    border-radius: 4px;
-    color: #007bff;  /* Customize color */
-}
-
-.pagination .page-link:hover {
-    color: #0056b3;
-    background-color: #f1f1f1;
-}
-
-.pagination .active .page-link {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-}

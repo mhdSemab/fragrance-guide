@@ -1,43 +1,51 @@
+<!-- resources/views/fragrances/index.blade.php -->
+
 @extends('layouts.app')
 
+@section('styles')
+    <link href="{{ asset('css/fragrances/index.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
-    <h1>Fragrance Collection</h1>
+    <div class="fragrance-collection">
+        <header class="collection-header">
+            <h1>Fragrance Collection</h1>
+            <form action = "{{ route('fragrances.index') }}" method="GET" class="search-form">
+                <input type="text" name="search" placeholder="Search for a Fragrance" value="{{ request('search') }}">
+                <button type="submit">Search</button>
+            </form>
+        </header>
 
-    <a href="{{ route('fragrances.create') }}">Add New Fragrance</a>
 
-    <table>
-        <thead>
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <tr>
-            <th>Name</th>
-            <th>Brand</th>
-            <th>Scent Type</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach ($fragrances as $fragrance)
+        <table class="fragrance-table">
+            <thead>
             <tr>
-                <td>{{ $fragrance->name }}</td>
-                <td>{{ $fragrance->brand }}</td>
-                <td>{{ $fragrance->scent_type }}</td>
-                <td>{{ $fragrance->description }}</td>
-                <td>${{ $fragrance->price }}</td>
-                <td>
-                    <a href="{{ route('fragrances.show', $fragrance->id) }}">View</a>
-                    <a href="{{ route('fragrances.edit', $fragrance->id) }}">Edit</a>
-                    <form action="{{ route('fragrances.destroy', $fragrance->id) }}" method="POST" style="display:inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">Delete</button>
-                    </form>
-                </td>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Scent Type</th>
+                <th>Description</th>
+                <th>Price</th>
             </tr>
-        @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            @foreach ($fragrances as $fragrance)
+                <tr>
+                    <td>
+                        <a href="{{ route('fragrances.show', $fragrance->id) }}" class="fragrance-link">
+                            {{ $fragrance->name }}
+                        </a>
+                    </td>
+                    <td>{{ $fragrance->brand }}</td>
+                    <td>{{ $fragrance->scent_type }}</td>
+                    <td>{{ Str::limit($fragrance->description, 100) }}</td>
+                    <td>${{ number_format($fragrance->price, 2) }}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+        <div class="paginator-container">
+            {{ $fragrances->links() }}
+        </div>
 
-    {{ $fragrances->links() }}
+    </div>
 @endsection

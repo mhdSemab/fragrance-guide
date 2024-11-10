@@ -7,6 +7,7 @@
     <title>Fragrance Guide</title>
     <!-- Include any CSS here -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @yield('styles')
 </head>
 <body>
 <header>
@@ -14,6 +15,7 @@
     <nav>
         <a href="{{ route('fragrances.index') }}">Home</a>
         <a href="{{ route('fragrances.create') }}">Add Fragrance</a>
+        <a href="{{ route('fragrances.about') }}">About</a>
     </nav>
 </header>
 
@@ -21,8 +23,8 @@
     @yield('content')
 </main>
 
-<footer>
-    <p>&copy; {{ date('Y') }} Fragrance Guide</p>
+<footer style="text-align: center;">
+    <p>Fragrance Guide by Muhammad Semab</p>
 </footer>
 </body>
 </html>

@@ -1,0 +1,165 @@
+/* public/css/fragrances/index.css */
+
+.fragrance-collection {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.collection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.collection-header h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.add-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #2980b9;
+}
+
+.fragrance-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fragrance-table th {
+    background-color: #f8f9fa;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+}
+
+.fragrance-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #34495e;
+}
+
+.fragrance-table tr:last-child td {
+    border-bottom: none;
+}
+
+.fragrance-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.fragrance-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.fragrance-link:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+.page-item {
+    margin: 0; /* Remove margin */
+}
+.page-link{
+    margin: 0;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+
+/*.pagination {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.pagination li {*/
+/*    display: inline-block;*/
+/*    margin: 0 5px;*/
+/*}*/
+
+/*.pagination a,*/
+/*.pagination span {*/
+/*    font-size: 14px; !* Adjust this to make icons smaller *!*/
+/*    padding: 8px 12px; !* Control the clickable area *!*/
+/*    border-radius: 5px;*/
+/*    text-decoration: none;*/
+/*    color: #333;*/
+/*}*/
+
+/*.pagination a:hover {*/
+/*    background-color: #f0f0f0; !* Adds a hover effect *!*/
+/*}*/
+
+/*.pagination .active span {*/
+/*    font-weight: bold;*/
+/*    background-color: #007bff;*/
+/*    color: white;*/
+/*}*/
+
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.search-form input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
