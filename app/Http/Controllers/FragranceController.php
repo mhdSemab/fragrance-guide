@@ -11,10 +11,36 @@ class FragranceController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
+        $filterBrand = $request->input('brand');
+        $filterScent = $request->input('scent_type');
+        $filterMinPrice = $request->input('min_price');
+        $filterMaxPrice = $request->input('max_price');
+
+        $brands = Fragrance::select('brand')->distinct()->get();
+        $scentTypes = Fragrance::select('scent_type')->distinct()->get();
+
+        $minAvailablePrice = Fragrance::min('price');
+        $maxAvailablePrice = Fragrance::max('price');
+
         $fragrances = Fragrance::when($search, function ($query, $search) {
-            return $query->where('name', 'like', '%' . $search . '%') ->orWhere('description', 'like', '%' . $search . '%');
-        })->paginate(10);
-        return view('fragrances.index', compact('fragrances'));
+            return $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('description', 'like', '%' . $search . '%');
+        })
+            ->when($filterBrand, function ($query, $filterBrand) {
+                return $query->where('brand', $filterBrand);
+            })
+            ->when($filterScent, function ($query, $filterScent) {
+                return $query->where('scent_type', $filterScent);
+            })
+            ->when($filterMinPrice, function ($query, $filterMinPrice) {
+                return $query->where('price', '>=', $filterMinPrice);
+            })
+            ->when($filterMaxPrice, function ($query, $filterMaxPrice) {
+                return $query->where('price', '<=', $filterMaxPrice);
+            })
+            ->paginate(10);
+
+        return view('fragrances.index', compact('fragrances', 'brands', 'scentTypes', 'minAvailablePrice', 'maxAvailablePrice'));
     }
 
     public function create()
