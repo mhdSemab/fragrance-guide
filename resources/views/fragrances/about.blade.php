@@ -15,7 +15,7 @@
     <body>
 
     <div class="text-body" style="text-align: center;">
-        <p>This app is a guide to help you decide on your next fragrance. By Muhammad Semab.</p>
+        <p><strong>This app is a guide to help you decide on your next fragrance. By Muhammad Semab.</strong></p>
     </div>
     </body>
 @endsection

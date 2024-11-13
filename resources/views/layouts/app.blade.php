@@ -1,4 +1,3 @@
-<!-- resources/views/layouts/app.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +7,13 @@
     <!-- Include any CSS here -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @yield('styles')
+    <link rel="icon" href="{{ asset('lotion-bottle.svg') }}" type="image/x-icon">
 </head>
 <body>
 <header>
-    <h1>Welcome to the Fragrance Guide</h1>
+    <h1>
+        Welcome to the Fragrance Guide
+    </h1>
     <nav>
         <a href="{{ route('fragrances.index') }}">Home</a>
         <a href="{{ route('fragrances.create') }}">Add Fragrance</a>
