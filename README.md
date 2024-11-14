@@ -46,9 +46,14 @@
   - implemented using complex queries with Eloquent in `index` function found in `FragranceController.php`
 - Route resourcing used to set up resource routes for CRUD operations allowing for cleaner code
   - in `web.php`
+- Custom blade code for the pagination 
+  - customised code for `default.blade.php` to change the pagination buttons for my web app without the use of any CSS frameworks.
 ---
 ### Conclusion
 
 My web app provides a easy-to-navigate website to explore a collection of fragrances. By implementing core Laravel features, including CRUD operations, search and filter functionality, and custom input validation, the app demonstrates my solid foundation of the Laravel framework.
 
 ---
+
+Extra Information:
+I emailed you about the use of Bootstrap 5 for the pagination, I have removed it from the `AppServiceProvider.php` file and there is no use of any CSS frameworks for this app.

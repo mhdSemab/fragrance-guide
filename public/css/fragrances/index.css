@@ -89,8 +89,8 @@
 }
 
 .page-link {
-    margin: 0; /* Remove margin */
-    padding: 0.5rem 0.75rem; /* Adjust padding */
+    margin: 0;
+    padding: 0.5rem 0.75rem;
     position: relative;
     display: block;
     line-height: 1.25;
