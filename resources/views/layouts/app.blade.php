@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fragrance Guide</title>
-    <!-- Include any CSS here -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @yield('styles')
     <link rel="icon" href="{{ asset('lotion-bottle.svg') }}" type="image/x-icon">

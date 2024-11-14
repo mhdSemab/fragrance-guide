@@ -1,4 +1,3 @@
-<!-- resources/views/fragrances/edit.blade.php -->
 
 @extends('layouts.app')
 
@@ -12,7 +11,7 @@
 
         <form action="{{ route('fragrances.update', $fragrance) }}" method="POST">
             @csrf
-            @method('PUT')  <!-- Add this line to specify that the form is using PUT for updating -->
+            @method('PUT')
 
             <div class="form-group">
                 <label class="form-label" for="name">Name</label>

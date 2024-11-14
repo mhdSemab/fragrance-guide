@@ -1,4 +1,3 @@
-<!-- resources/views/fragrances/about.blade.php -->
 
 @extends('layouts.app')
 
