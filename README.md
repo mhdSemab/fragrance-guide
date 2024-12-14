@@ -54,6 +54,3 @@
 My web app provides a easy-to-navigate website to explore a collection of fragrances. By implementing core Laravel features, including CRUD operations, search and filter functionality, and custom input validation, the app demonstrates my solid foundation of the Laravel framework.
 
 ---
-
-Extra Information:
-I emailed you about the use of Bootstrap 5 for the pagination, I have removed it from the `AppServiceProvider.php` file and there is no use of any CSS frameworks for this app.
